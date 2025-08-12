@@ -5,54 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 // Dummy CarInventory and Car class definitions for compilation
-class CarInventory {
-    private java.util.ArrayList<Car> cars = new java.util.ArrayList<>();
-
-    public void addCar(Car car) {
-        cars.add(car);
-    }
-
-    public java.util.List<Car> getAllCars() {
-        return new java.util.ArrayList<>(cars);
-    }
-
-    public Car findCar(String vin) {
-        for (Car car : cars) {
-            if (car.getVin().equals(vin)) {
-                return car;
-            }
-        }
-        return null;
-    }
-
-    public boolean removeCar(String vin) {
-        return cars.removeIf(car -> car.getVin().equals(vin));
-    }
-}
-
-class Car {
-    private String make;
-    private String model;
-    private int year;
-    private String vin;
-
-    public Car(String make, String model, int year, String vin) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.vin = vin;
-    }
-
-    public String getVin() {
-        return vin;
-    }
-
-    @Override
-    public String toString() {
-        return year + " " + make + " " + model + " (VIN: " + vin + ")";
-    }
-}
-
 public class CarInventoryCLI {
 
     private static CarInventory inventory = new CarInventory();
